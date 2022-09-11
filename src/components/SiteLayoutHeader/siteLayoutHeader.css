@@ -1,0 +1,10 @@
+.topBar {
+    background-color: white;
+    overflow: hidden;
+}
+
+.dashboardImage {
+    float: left;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
