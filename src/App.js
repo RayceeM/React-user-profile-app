@@ -1,10 +1,10 @@
-import './App.css';
-import {SiteHeadingCard} from "./components/SiteLayoutHeader/SiteLayoutHeader";
-import { UserTable } from './components/UserTable/UserTable';
-import {useEffect, useState } from 'react';
+import "./App.css";
+import { SiteHeadingCard } from "./components/SiteLayoutHeader/SiteLayoutHeader";
+import { UserTable } from "./components/UserTable/UserTable";
+import { useEffect, useState } from "react";
 
 function App() {
-  const [users, setUsers] =  useState([])
+  const [users, setUsers] = useState([]);
 
   useEffect(() => {
     const run = async () => {
@@ -13,20 +13,19 @@ function App() {
           "https://62d85cba9c8b5185c787f36b.mockapi.io/api/v1/users/"
         );
         const users = await UsersResponse.json();
-        console.log(">>>>users-here: ", users)
-        setUsers(users)
+        setUsers(users);
       } catch (error) {
-        console.error(error)
+        console.error(error);
       }
-    }
-    run()
-  }, [])
+    };
+    run();
+  }, []);
 
   return (
     <div className="App">
       <SiteHeadingCard />
       <h2>Users</h2>
-   <UserTable users={users} />
+      <UserTable users={users} />
     </div>
   );
 }
